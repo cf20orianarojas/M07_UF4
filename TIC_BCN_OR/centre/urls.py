@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    # truca 'index' de la view
-    path('', views.index, name='index')
+    # trucada a les views de templates
+    path('', views.index, name='index'),
+    path('students', views.students, name='students'),
+    path('teachers', views.teachers, name='teachers'),
 ]
