@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Students</title>
-</head>
-<body>
-    <h1>INFORMACIÓ ALUMNAT TIC BARCELONA</h1>
-</body>
-</html>
+{% extends 'index.html' %}
+    {% block content %}
+    <h2>INFORMACIÓ ALUMNAT TIC BARCELONA</h2>
+    <table>
+        <tr>
+            <th>NOM</th>
+            <th>COGNOM</th>
+            <th>COGNOM 2</th>
+            <th>CORREU</th>
+            <th>CURS</th>
+            <th>MODULS</th>
+        </tr>
+        {% for alumne in students %}
+        <tr>
+            <td>{{ alumne.nom }}</td>
+            <td>{{ alumne.cognom1 }}</td>
+            <td>{{ alumne.cognom2 }}</td>
+            <td>{{ alumne.correu }}</td>
+            <td>{{ alumne.curs }}</td>
+            <td>[ {{ alumne.moduls }} ]</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
