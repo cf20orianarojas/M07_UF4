@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Teachers</title>
-</head>
-<body>
-    <h1>INFORMACIÓ PROFESSORAT TIC BARCELONA</h1>
-</body>
-</html>
+{% extends "index.html" %}
+    {% block content %}
+    <h2>INFORMACIÓ PROFESSORAT TIC BARCELONA</h2>
+    <table>
+        <tr>
+            <th>NOM</th>
+            <th>COGNOM</th>
+            <th>COGNOM 2</th>
+            <th>CORREU</th>
+            <th>CURS</th>
+            <th>TUTOR</th>
+            <th>MODULS</th>
+        </tr>
+        {% for professor in teachers %}
+        <tr>
+            <td>{{ professor.nom }}</td>
+            <td>{{ professor.cognom1 }}</td>
+            <td>{{ professor.cognom2 }}</td>
+            <td>{{ professor.correu }}</td>
+            <td>{{ professor.curs }}</td>
+            <td>{{ professor.tutor }}</td>
+            <td>{{ professor.moduls }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
