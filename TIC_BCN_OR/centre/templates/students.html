@@ -20,7 +20,10 @@
             <td>{{ alumne.correu }}</td>
             <td>{{ alumne.curs }}</td>
             <td>[ {{ alumne.moduls }} ]</td>
+            <td><a href="{% url 'student' alumne.id %}">+INFO</a></td>
         </tr>
         {% endfor %}
     </table>
+    <br>
+    <a href="{% url 'index' %}">Go back </a>
     {% endblock %}

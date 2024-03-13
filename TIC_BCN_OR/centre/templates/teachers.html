@@ -22,7 +22,10 @@
             <td>{{ professor.curs }}</td>
             <td>{{ professor.tutor }}</td>
             <td>{{ professor.moduls }}</td>
+            <td><a href="{% url 'teacher' professor.id %}">+INFO</a></td>
         </tr>
         {% endfor %}
     </table>
+    <br>
+    <a href="{% url 'index' %}">Go back </a>
     {% endblock %}

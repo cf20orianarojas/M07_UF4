@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-alumnes = [
+students_dic = [
         {'id':'1','nom':'Angelo', 'cognom1':'Montenegro', 'cognom2':'Zavala', 'correu':'2023_angelo.montenegro@iticbcn.cat', 'curs':'DAW2A', 'moduls':'M6, M7, M8, M13, M9'},
         {'id':'2','nom':'Adria', 'cognom1':'Garcia', 'cognom2':'Perez', 'correu':'2023_adria.garcia@iticbcn.cat', 'curs':'DAW2A', 'moduls':'M6, M7, M8, M13, M9'},
         {'id':'3','nom':'Alexander', 'cognom1':'Andreev', 'cognom2':'Apukhtina', 'correu':'2023_alexander.andreev@iticbcn.cat', 'curs':'DAW2A', 'moduls':'M6, M7, M8, M13, M9'},
@@ -22,7 +22,7 @@ alumnes = [
         {'id':'19','nom':'Veronica', 'cognom1':'Cartagena', 'cognom2':'Jaldin', 'correu':'2023_veronica.cartagena@iticbcn.cat', 'curs':'DAW2A', 'moduls':'M6, M7, M8, M13, M9'}
 ]
 
-teachers = [
+teachers_dic = [
     {'id': '1', 'nom': 'Juan Manuel', 'cognom1': 'Sánchez', 'cognom2': 'Bel', 'correu': 'juanmanuel.sanchez@iticbcn.cat',
      'curs': 'DAW2A', 'tutor': 'Si', 'moduls': 'M6'},
     {'id': '2', 'nom': 'Roger', 'cognom1': 'Sobrino', 'cognom2': 'Gil', 'correu': 'roger.sobrino@iticbcn.cat',
@@ -39,12 +39,22 @@ def index(request):
 
 # Funció que retornà el template students.html i les dades dels alumnes
 def students(request):
-    return render(request, 'students.html', { 'students':alumnes })
+    return render(request, 'students.html', { 'students':students_dic })
 
 # Funció que retornà el template teachers.html les dades dels professors
 def teachers(request):
-    return render(request, 'teachers.html', { 'teachers': teachers })
+    return render(request, 'teachers.html', { 'teachers': teachers_dic })
 
-def info(request, pk):
-    infoObj = none
-    for i in infoObj
+def info_teacher(request, pk):
+    infoObj = None
+    for i in teachers_dic:
+        if i['id'] == pk:
+            infoObj = i
+    return render(request, 'info_teachers.html', {'teacher': infoObj})
+
+def info_student(request, pk):
+    infoObj = None
+    for i in students_dic:
+        if i['id'] == pk:
+            infoObj = i
+    return render(request, 'info_students.html', {'student': infoObj })
