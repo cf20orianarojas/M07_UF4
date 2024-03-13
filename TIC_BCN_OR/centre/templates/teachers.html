@@ -3,6 +3,7 @@
     <h2>INFORMACIÓ PROFESSORAT TIC BARCELONA</h2>
     <table>
         <tr>
+            <th>ID</th>
             <th>NOM</th>
             <th>COGNOM</th>
             <th>COGNOM 2</th>
@@ -13,6 +14,7 @@
         </tr>
         {% for professor in teachers %}
         <tr>
+            <td>{{ professor.id }}</td>
             <td>{{ professor.nom }}</td>
             <td>{{ professor.cognom1 }}</td>
             <td>{{ professor.cognom2 }}</td>

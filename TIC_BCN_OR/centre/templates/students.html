@@ -3,6 +3,7 @@
     <h2>INFORMACIÓ ALUMNAT TIC BARCELONA</h2>
     <table>
         <tr>
+            <th>ID</th>
             <th>NOM</th>
             <th>COGNOM</th>
             <th>COGNOM 2</th>
@@ -12,6 +13,7 @@
         </tr>
         {% for alumne in students %}
         <tr>
+            <td>{{ alumne.id }}</td>
             <td>{{ alumne.nom }}</td>
             <td>{{ alumne.cognom1 }}</td>
             <td>{{ alumne.cognom2 }}</td>
