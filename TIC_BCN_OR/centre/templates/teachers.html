@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+    {% block content %}
+    <h2>INFORMACIÓ PROFESSORAT TIC BARCELONA</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>NOM</th>
+            <th>COGNOM</th>
+            <th>COGNOM 2</th>
+            <th>CORREU</th>
+            <th>CURS</th>
+            <th>TUTOR</th>
+            <th>MODULS</th>
+        </tr>
+        {% for professor in teachers %}
+        <tr>
+            <td>{{ professor.id }}</td>
+            <td>{{ professor.nom }}</td>
+            <td>{{ professor.cognom1 }}</td>
+            <td>{{ professor.cognom2 }}</td>
+            <td>{{ professor.correu }}</td>
+            <td>{{ professor.curs }}</td>
+            <td>{{ professor.tutor }}</td>
+            <td>{{ professor.moduls }}</td>
+            <td><a href="{% url 'teacher' professor.id %}">+INFO</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{% url 'index' %}"> Go back </a>
+    {% endblock %}

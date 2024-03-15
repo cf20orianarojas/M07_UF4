@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+    {% block content %}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>NOM</th>
+            <th>COGNOM</th>
+            <th>COGNOM 2</th>
+            <th>CORREU</th>
+            <th>CURS</th>
+            <th>MODULS</th>
+        </tr>
+        <tr>
+            <td>{{ student.id }}</td>
+            <td>{{ student.nom }}</td>
+            <td>{{ student.cognom1 }}</td>
+            <td>{{ student.cognom2 }}</td>
+            <td>{{ student.correu }}</td>
+            <td>{{ student.curs }}</td>
+            <td>{{ student.moduls }}</td>
+        </tr>
+    </table>
+    <a href="{% url 'students' %}">Atras </a>
+    {% endblock %}

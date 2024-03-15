@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+    {% block content %}
+    <h2>INFORMACIÓ ALUMNAT TIC BARCELONA </h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>NOM</th>
+            <th>COGNOM</th>
+            <th>COGNOM 2</th>
+            <th>CORREU</th>
+            <th>CURS</th>
+            <th>MODULS</th>
+        </tr>
+        {% for alumne in students %}
+        <tr>
+            <td>{{ alumne.id }}</td>
+            <td>{{ alumne.nom }}</td>
+            <td>{{ alumne.cognom1 }}</td>
+            <td>{{ alumne.cognom2 }}</td>
+            <td>{{ alumne.correu }}</td>
+            <td>{{ alumne.curs }}</td>
+            <td>[ {{ alumne.moduls }} ]</td>
+            <td><a href="{% url 'student' alumne.id %}">+INFO</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{% url 'index' %}"> Go back </a>
+    {% endblock %}
