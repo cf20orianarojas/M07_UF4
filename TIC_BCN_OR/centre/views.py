@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+# diccionaris de dades
 students_dic = [
         {'id':'1','nom':'Angelo', 'cognom1':'Montenegro', 'cognom2':'Zavala', 'correu':'2023_angelo.montenegro@iticbcn.cat', 'curs':'DAW2A', 'moduls':'M6, M7, M8, M13, M9'},
         {'id':'2','nom':'Adria', 'cognom1':'Garcia', 'cognom2':'Perez', 'correu':'2023_adria.garcia@iticbcn.cat', 'curs':'DAW2A', 'moduls':'M6, M7, M8, M13, M9'},
@@ -33,7 +34,7 @@ teachers_dic = [
      'curs': 'DAW2A', 'tutor': '', 'moduls': 'M9'}
 ]
 
-# index
+# index centre
 def index(request):
     return render(request, 'index_centre.html')
 
@@ -57,4 +58,4 @@ def info_student(request, pk):
     for i in students_dic:
         if i['id'] == pk:
             infoObj = i
-    return render(request, 'info_students.html', {'student': infoObj })
+    return render(request, 'info_students.html', {'student': infoObj})
