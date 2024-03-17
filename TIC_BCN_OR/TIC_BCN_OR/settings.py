@@ -76,11 +76,15 @@ WSGI_APPLICATION = 'TIC_BCN_OR.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
+# connexió a postgres
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ITIC_DB',
+        'USER': 'admin',
+        'PASSWORD': 'iticbcn',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
