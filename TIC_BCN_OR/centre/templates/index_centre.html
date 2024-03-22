@@ -1,5 +1,9 @@
 {% extends "index.html" %}
     {% block content %}
+        <h2>Centre ITICBCN</h2>
+        <!-- Enllaç al formulari de registre de usuaris -->
+        <a href="{% url 'form' %}">Afegir usuaris</a><br>
+        <br>
         <a href="{% url 'teachers' %}">View professors </a> <br>
         <br> 
         <a href="{% url 'students' %}">View alumnes </a>

@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from .form import UserForm
 
 # diccionaris de dades
 students_dic = [
@@ -59,3 +61,8 @@ def info_student(request, pk):
         if i['id'] == pk:
             infoObj = i
     return render(request, 'info_students.html', {'student': infoObj})
+
+def form(request):
+    form = UserForm()
+    context = {'form':form}
+    return render(request, 'form.html', context)
