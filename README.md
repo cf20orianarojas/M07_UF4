@@ -30,3 +30,17 @@ Taula de model centre_user:
 ![taula](media/taules.png)
 
 ### [Video demo migrate](https://drive.google.com/file/d/1n0y7QCXWphVDDEWahLKkhX8CzIMhSVJb/view?usp=sharing)
+
+------------------------------------------------------
+## PRÀCTICA 3 - FORM
+
+Formulari del centre per afegir alumnat i professorat
+
+> [!NOTE]  
+>.as_p renderitza els camps del formulari dins de etiquetes <p></p>
+
+### Amb .as_p
+![form.as_p](media/form.as_p.png)
+
+### Sense .as_p
+![form](media/form.png)
